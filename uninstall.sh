@@ -16,6 +16,7 @@ for app in "${cask_apps[@]}" ;do
     brew uninstall --cask $app
     echo "[UNINSTALLING] $app ✅ "
     sleep 1
+done
 
 # Remove auxiliary dirs or files
 rm -r ~/RSBP/
