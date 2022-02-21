@@ -22,7 +22,7 @@ done
 
 # Create auxiliary dirs or files
 mkdir ~/RSBP/
-echo "[INFO] create RSBP dir ✅ "
+echo "[INFO] create auxiliary dir ✅ "
 
 # Show hidden files
 defaults write com.apple.Finder AppleShowAllFiles true
