@@ -1,0 +1,22 @@
+{
+    // editor
+    "editor.fontSize": 17,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [79],
+    "editor.wordWrap": "on",
+
+    // workbench
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.openDefaultSettings": true,
+    "workbench.startupEditor": "newUntitledFile",
+
+    "files.trimTrailingWhitespace": true,
+
+    // html
+    "html.format.indentInnerHtml": true,
+    "html.format.indentHandlebars": true
+
+}
