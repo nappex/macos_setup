@@ -54,3 +54,20 @@ cp $PWD/oh-my-zsh/themes/custom_kphoen.zsh-theme $HOME/.oh-my-zsh/themes/kphoen.
 cp $PWD/oh-my-zsh/.zshrc $HOME/
 source $HOME/.zshrc
 echo "[SETUP] Oh-My-Zsh ✅ "
+
+# Setup VScodium
+codium_extensions=(
+    'vscode-icons-team.vscode-icons'
+    'ms-python.python'
+    'dracula-theme.theme-dracula'
+    'elixir-lsp.elixir-ls'
+)
+
+for ext in "${codium_extensions[@]}" ;do
+    codium --install-extension $ext
+    echo "[INSTALLING] VSCodium extension: $ext ✅ "
+    sleep 1
+done
+
+cp vscodium/settings.json $HOME/Library/Application\ Support/VSCodium/User
+echo "[IMPORT] VSCodium User settings ✅ "
