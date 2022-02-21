@@ -18,6 +18,7 @@ for app in "${cask_apps[@]}" ;do
     brew install --cask $app
     echo "[INSTALLING] $app ✅ "
     sleep 1
+done
 
 # Create auxiliary dirs or files
 mkdir ~/RSBP/
