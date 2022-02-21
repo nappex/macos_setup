@@ -21,7 +21,7 @@ for app in "${cask_apps[@]}" ;do
 done
 
 # Create auxiliary dirs or files
-mkdir ~/RSBP/
+mkdir $HOME/RSBP/
 echo "[INFO] create auxiliary dir ✅ "
 
 # Show hidden files
