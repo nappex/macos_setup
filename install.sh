@@ -53,5 +53,4 @@ echo "[SETUP] git ✅ "
 cp $PWD/oh-my-zsh/themes/custom_kphoen.zsh-theme $HOME/.oh-my-zsh/themes/kphoen.zsh-theme
 cp $PWD/oh-my-zsh/.zshrc $HOME/
 source $HOME/.zshrc
-# echo "asdasd" >> ~/.zshrc
 echo "[SETUP] Oh-My-Zsh ✅ "
