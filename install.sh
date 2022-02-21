@@ -41,17 +41,17 @@ if ! [ -d $HOME/.config/git ]
 then
     mkdir -p $HOME/.config/git
     echo "[INFO] create $HOME/.config/git ✅ "
-    cp $PWD/ignore $HOME/.config/git/
+    cp $PWD/git/ignore $HOME/.config/git/
     echo "[INFO] ignore copied to $HOME/.config/git ✅ "
 else
-    cp $PWD/ignore $HOME/.config/git/
+    cp $PWD/git/ignore $HOME/.config/git/
     echo "[INFO] ignore copied to $HOME/.config/git ✅ "
 fi
 echo "[SETUP] git ✅ "
 
 # Setup Oh My Zsh
-cp $PWD/custom_kphoen.zsh-theme $HOME/.oh-my-zsh/themes/kphoen.zsh-theme
-cp $PWD/.zshrc $HOME/
+cp $PWD/oh-my-zsh/themes/custom_kphoen.zsh-theme $HOME/.oh-my-zsh/themes/kphoen.zsh-theme
+cp $PWD/oh-my-zsh/.zshrc $HOME/
 source $HOME/.zshrc
 # echo "asdasd" >> ~/.zshrc
 echo "[SETUP] Oh-My-Zsh ✅ "
