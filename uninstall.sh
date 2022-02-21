@@ -39,3 +39,10 @@ then
     rm -r $HOME/.config/git
     echo "[REMOVE] $HOME/.config/git ✅ "
 fi
+
+# Remove vscodium
+if [ -f $HOME/Library/Application\ Support/VSCodium/User/settings.json ]
+then
+    rm $HOME/Library/Application\ Support/VSCodium/User/settings.json
+    echo "[REMOVE] $HOME/Library/Application\ Support/VSCodium/User/settings.json ✅ "
+fi
