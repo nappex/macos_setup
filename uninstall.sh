@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-#brew uninstall
+# Uninstall brew
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 echo "[UNINSTALLING] brew ✅ "
 
@@ -10,7 +10,7 @@ echo "[UNINSTALLING] Oh-My-Zsh ✅ "
 sleep 1
 cd
 
-# install apps via brew
+# Uninstall apps via brew
 cask_apps=('keepassxc' 'vscodium' 'slack' 'firefox' 'microsoft-remote-desktop')
 for app in "${cask_apps[@]}" ;do
     brew uninstall --cask $app
@@ -27,7 +27,7 @@ killall Finder
 sleep 1
 echo "[SETUP] hide hidden files ✅ "
 
-# Setup git
+# Remove git
 if [ -f $HOME/.gitconfig ]
 then
     rm $HOME/.gitconfig
