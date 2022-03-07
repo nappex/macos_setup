@@ -13,12 +13,22 @@ sleep 1
 cd
 
 # install apps via brew
-cask_apps=('keepassxc' 'vscodium' 'slack' 'firefox' 'microsoft-remote-desktop')
+cask_apps=(
+    'keepassxc'
+    'vscodium'
+    'slack'
+    'firefox'
+    'microsoft-remote-desktop'
+    'balenaetcher'
+)
 for app in "${cask_apps[@]}" ;do
     brew install --cask $app
     echo "[INSTALLING] $app ✅ "
     sleep 1
 done
+
+brew install gnupg
+echo "[INSTALLING] gnupg ✅ "
 
 # Create auxiliary dirs or files
 mkdir $HOME/RSBP/
