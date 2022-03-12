@@ -12,7 +12,7 @@ echo "[INSTALLING] Oh-My-Zsh ✅ "
 sleep 1
 cd
 
-# install apps via brew
+# install cask apps via brew
 cask_apps=(
     'keepassxc'
     'vscodium'
@@ -20,15 +20,22 @@ cask_apps=(
     'firefox'
     'microsoft-remote-desktop'
     'balenaetcher'
+    'freeplane'
 )
-for app in "${cask_apps[@]}" ;do
+for app in "${cask_apps[@]}"
+do
     brew install --cask $app
     echo "[INSTALLING] $app ✅ "
     sleep 1
 done
 
-brew install gnupg
-echo "[INSTALLING] gnupg ✅ "
+tools=('gnupg' 'cherrytree')
+for tool in "${tools[@]}"
+do
+    brew install $tool
+    echo "[INSTALLING] $tool ✅ "
+    sleep 0.5
+done
 
 # Create auxiliary dirs or files
 mkdir $HOME/RSBP/
