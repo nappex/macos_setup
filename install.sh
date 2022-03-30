@@ -12,28 +12,30 @@ echo "[INSTALLING] Oh-My-Zsh ✅ "
 sleep 1
 cd
 
+# load arrays in config
+while read line; do
+    if [[ $line =~ ^"["(.+)"]"$ ]]; then
+        index=0
+        arrname=${BASH_REMATCH[1]}
+        declare -a $arrname
+    elif [[ $line =~ ^([A-Za-z\-]+)$ ]]; then
+        declare ${arrname}[$index]="${BASH_REMATCH[1]}"
+        ((++index))
+    fi
+done < config.conf
+
 # install cask apps via brew
-cask_apps=(
-    'keepassxc'
-    'vscodium'
-    'slack'
-    'firefox'
-    'microsoft-remote-desktop'
-    'balenaetcher'
-    'freeplane'
-)
-for app in "${cask_apps[@]}"
+for cask in "${BREW_CASKS[@]}"
 do
-    brew install --cask $app
-    echo "[INSTALLING] $app ✅ "
-    sleep 1
+    brew install --cask $cask
+    echo "[INSTALLING] $cask ✅ "
+    sleep 0.5
 done
 
-tools=('gnupg' 'cherrytree')
-for tool in "${tools[@]}"
+for pkg in "${BREW_PKGS[@]}"
 do
-    brew install $tool
-    echo "[INSTALLING] $tool ✅ "
+    brew install $pkg
+    echo "[INSTALLING] $pkg ✅ "
     sleep 0.5
 done
 

@@ -10,12 +10,30 @@ echo "[UNINSTALLING] Oh-My-Zsh ✅ "
 sleep 1
 cd
 
-# Uninstall apps via brew
-cask_apps=('keepassxc' 'vscodium' 'slack' 'firefox' 'microsoft-remote-desktop')
-for app in "${cask_apps[@]}" ;do
+# load arrays in config
+while read line; do
+    if [[ $line =~ ^"["(.+)"]"$ ]]; then
+        index=0
+        arrname=${BASH_REMATCH[1]}
+        declare -a $arrname
+    elif [[ $line =~ ^([A-Za-z\-]+)$ ]]; then
+        declare ${arrname}[$index]="${BASH_REMATCH[1]}"
+        ((++index))
+    fi
+done < config.conf
+
+# Uninstall cask apps via brew
+for app in "${BREW_CASKS[@]}" ;do
     brew uninstall --cask $app
     echo "[UNINSTALLING] $app ✅ "
-    sleep 1
+    sleep 0.5
+done
+
+for pkg in "${BREW_PKGS[@]}"
+do
+    brew uninstall $pkg
+    echo "[UNINSTALLING] $pkg ✅ "
+    sleep 0.5
 done
 
 # Remove auxiliary dirs or files
